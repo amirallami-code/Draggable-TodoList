@@ -30,10 +30,7 @@ function HasDuplicateNum() {
 function addTodo() {
     let newTodo = $.createElement("div");
     newTodo.classList = "todo";
-    // newTodo.classList.add(newRandomNum)
     newTodo.setAttribute("draggable", "true");
-    // newTodo.setAttribute("ondragstart", "onDropHandler(event)");
-    //refactor
 
     newRandomNumHandler()
     HasDuplicateNum()
@@ -77,15 +74,11 @@ function deleteTodosHandler(event) {
     deleteTodo.remove();
 }
 function onDragStartHandler(event) {
-    // event.dataTransfer.setData("ElemClassList", event.target.classList.value);
-    // refactor
     event.dataTransfer.setData("ElemId", event.toElement.id);
 }
 
 function onDropHandler(event) {
     let ElemTargetId = event.dataTransfer.getData("ElemId");
-    // let ElemContent = document.getElementsByClassName(ElemClassListTarget);
-    // refactor
     let ElemContent = document.getElementById(ElemTargetId);
     event.target.append(ElemContent);
 }
